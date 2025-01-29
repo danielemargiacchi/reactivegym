@@ -1,0 +1,65 @@
+.booking-card {
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.564);
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    transition: 0.2s ease-in all;
+    padding: 15px;
+}
+
+@media screen and (max-width:500px) {
+    .booking-card{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .booking-card-booking{
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width:1200px) {
+    .booking-card {
+        width: 90%;
+    }
+}
+
+
+.booking-card-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #9dfff4;
+}
+
+.booking-card-booking{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.start-date, .end-date{
+    display: flex;
+    flex-direction: column;
+}
+
+.begin{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(62, 189, 62);
+}
+.expire{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(189, 62, 62);
+}
+
+.time{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+

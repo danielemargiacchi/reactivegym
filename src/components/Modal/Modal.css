@@ -1,0 +1,128 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    font-size: 1.5rem;
+    border: none;
+    background-color: darkcyan;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.btn-modal-back{
+    padding: 15px;
+    background-color: rgb(33, 33, 33);
+    border:2px solid #e5e5e5;
+    color: #e5e5e5;
+    transition: all 0.3s ease-in;
+    width: 100%;
+}
+.btn-modal-back:hover{
+    cursor: pointer;
+    background-color: #fff;
+    border-color: #fff;
+    color: #1e1e1e;
+}
+
+.btn-modal:hover{
+    cursor: pointer;
+    background-color: rgb(3, 87, 87);
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(42, 42, 42, 0.643);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 3px;
+    max-width: 450px;
+    min-width: 300px;
+}
+
+.modal-content h2{
+    text-align: center;
+}
+
+.modal-content p.success-message{
+    font-size: 1.40rem;
+}
+
+.actions-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.actions-modal-btn{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.confirm-btn{
+    padding: 15px;
+    background-color: darkcyan;
+    color: #fff;
+    transition: all 0.3s ease-in;
+    width: 100%;
+}
+
+.confirm-btn:disabled{
+    padding: 15px;
+    background-color: rgb(113, 130, 130);
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+.confirm-btn:disabled:hover{
+    cursor:not-allowed;
+}
+
+.confirm-btn:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.close-modal {
+    padding: 15px;
+    transition: all 0.3s ease-in;
+    width: 100%;
+    background-color: rgb(33, 33, 33);
+    border:2px solid #e5e5e5;
+    color: #e5e5e5;
+}
+
+
+.close-modal:hover{
+    cursor: pointer;
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #1e1e1e;
+}
+
+.review-text{
+    font-style: italic;
+}
+

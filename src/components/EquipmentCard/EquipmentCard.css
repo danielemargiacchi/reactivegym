@@ -1,0 +1,75 @@
+.equipment-card {
+    width: 400px;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.564);
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 0.2s ease-in all;
+}
+
+.equipment-card:hover{
+    background-color: rgba(0, 0, 0, 0.393);
+    cursor: pointer;
+
+}
+
+
+.equipment-card-footer{
+    display: flex;
+}
+
+
+@media screen and (max-width:1200px) {
+    .equipment-card {
+        width: 90%;
+    }
+}
+
+
+
+.equipment-image {
+    width: 300px;
+    object-fit: cover;
+}
+
+.equipment-image img {
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+}
+
+.equipment-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+}
+
+.equipment-price{
+    align-self: flex-end;
+    width: 100%;
+    text-align: end;
+    padding: 10px;
+    color: #c8c8c8;
+}
+
+.equipment-name{
+    font-size: 1.3rem;
+    text-transform: lowercase;
+    color: #1abc9c;
+}
+
+.equipment-icon{
+    width: min-content;
+    padding: 10px;
+}
+.equipment-icon svg{
+    width: 60px!important;
+}
+.equipment-claim{
+    color: #fff;
+}

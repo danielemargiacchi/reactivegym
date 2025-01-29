@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+* {
+  font-family: 'Comfortaa';
+}
+
+/* BOX SIZING BORDER BOX */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* BODY BG COLOR */
+
+
+body {
+  background: linear-gradient(to bottom, #323232 0%, #1a1a1a 70%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.equipment-container,
+.bookings-container,
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.booking-container {
+  height: calc(100vh - 75px);
+  overflow: hidden;
+}
+
+@media  screen and (max-width:990px) {
+  .booking-container {
+    height: calc(100vh - 75px);
+    overflow:scroll;
+  }
+}
+
+
+
+.equipment-container {
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.book-btn {
+  border: none;
+  background-color: #1abc9c;
+  padding: 10px;
+}
+
+
+.pageTitle {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  color: #9dfff4;
+}
+
+.input-time {
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 0%;
+  border: 2px solid darkcyan;
+}
+
+#timeMinutes,
+#totPrice {
+  font-size: 2rem;
+}
+
+/* LOADING SPINNER STARTS */
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #1abc9c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* LOADING SPINNER ENDS */
+
+
+button {
+  padding: 10px 20px;
+  display: block;
+  font-size: 1.5rem;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(3, 87, 87);
+}
+
+
+.btn-time-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn-time-container button {
+  width: 48%;
+}
+
+
+
+.user-created-success-message {
+  text-align: center;
+}
+
+.success-message {
+  font-size: 1.5rem;
+  color: rgb(34, 206, 34);
+}
+
+.info-message {
+  font-size: 1.5rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.no-bookings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.equipment-detail {
+  display: flex;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 990px) {
+  .equipment-detail {
+    flex-direction: column;
+  }
+
+  .equipment-detail .equipment-hero-image {
+    width: 100%;
+    height: 40vh;
+  }
+
+
+  .equipment-detail .equipment-spec {
+    width: 100%;
+  }
+
+  .equipment-detail .equipment-spec-book {
+    width: 100%;
+  }
+}
+
+
+.equipment-hero-image {
+  width: 50%;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+.equipment-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipment-spec {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+.equipment-reviews {
+  width: 100%;
+  height: 50vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review {
+  background-color: #1c1c1c;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.review-heading {
+  margin: 0;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+.stars {
+  color: #fbc02d;
+}
+
+.star {
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+
+.star.filled {
+  color: #fbc02d;
+}
+
+.star {
+  color: #bbb;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.btn-controls {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-controls button {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 576px) {
+  .btn-controls {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+
+.btn-back {
+  padding: 15px;
+  background-color: rgb(33, 33, 33);
+  border: 2px solid #e5e5e5;
+  color: #e5e5e5;
+  transition: all 0.3s ease-in;
+  width: 100%;
+}
+
+.btn-back:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
+  color: #1e1e1e;
+}
+
+
+.equipment-spec-book {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+
+.btn-time-selected {
+  padding: 10px 20px;
+  display: block;
+  font-size: 1.5rem;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+  border: 2px solid darkcyan;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+.btn-time {
+  padding: 10px 20px;
+  display: block;
+  background-color: rgb(33, 33, 33);
+  font-size: 1.5rem;
+  border: 2px solid darkcyan;
+  color: rgb(0, 172, 172);
+  transition: all 0.3s ease-in;
+}
+
+.btn-time:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border-color: #fff;
+  color: #1e1e1e;
+}
+
+
+.login-page {
+  height: calc(100vh - 70px);
+  margin: 0;
+}
+
+.auth-page-image,
+.auth-page-auth {
+  width: 100%;
+}
+
+.auth-page-auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.auth-page-image {
+  background-size: cover;
+  background-position: right;
+  background-color: #1a1a1a66;
+  background-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+
+}
+
+.image-registration {
+  background-image: url('/registration-bg.avif');
+  background-position: top;
+
+}
+
+.image-login {
+  background-image: url('/login-bg.avif');
+
+}
+
+.auth-page-claim {
+  font-weight: bold;
+  width: min-content;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.auth-page-container {
+  display: flex;
+  width: 60%;
+  height: 70vh;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+
+@media (max-width: 1024px) {
+  .auth-page-container {
+    width: 80%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .auth-page-image,
+  .auth-page-auth {
+    height: auto;
+  }
+
+  .auth-page-image {
+    padding: 15px;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .auth-page-claim {
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  .image-registration {
+    background-attachment: fixed;
+
+  }
+}
+
+
+@media (max-width: 768px) {
+  .auth-page-container {
+    width: 90%;
+  }
+
+  .auth-page-claim {
+    font-size: 2.5rem;
+  }
+
+  .auth-page-image {
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .auth-page-auth {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .auth-page-container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .auth-page-claim {
+    font-size: 2rem;
+  }
+
+  .auth-page-image {
+    padding: 5px;
+    background-position: center;
+  }
+
+  .auth-page-auth {
+    padding: 5px;
+  }
+}
+
+
+
+
+.profile-bookings {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media screen and (max-width:1192px) {
+  .profile-btn {
+    height: 30vh;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .profile-bookings {
+    flex-direction: column;
+  }
+}
+
+
+.profile-btn {
+  width: 100%;
+  border: 2px solid darkcyan;
+  color: #fff;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: 0.2s all ease-in;
+}
+
+.profile-btn h3 {
+  font-size: 2rem;
+}
+
+.profile-btn:hover {
+  color: rgb(11, 236, 236);
+  cursor: pointer;
+  border: 2px solid rgb(11, 236, 236);
+  background-color: #00000073;
+}
+
+.my-bookings-btn {
+  background: url('/gym1.avif');
+  background-color: #00000082;
+  background-blend-mode: color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.all-bookings-btn {
+  background: url('/gym2.avif');
+  background-blend-mode: color;
+  background-color: #00000082;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+
+}
+
+.all-equipment-btn {
+  background: url('/gym3.avif');
+  background-blend-mode: color;
+  background-color: #0000005b;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .profile-bookings {
+    height: calc(80vh);
+  }
+
+  .profile-btn {
+    height: 100%;
+
+  }
+}
+
+
+
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+#equipment{
+  min-height: 100vh;
+}
+
+
+.error-message-container{
+  width: 75%;
+  text-align: center;
+  padding: 0 20px ;
+  background-color: rgba(255, 0, 0, 0.291);
+  color: #fff;
+}
+.success-message-container{
+  width: 75%;
+  text-align: center;
+  padding: 0 20px ;
+  background-color: rgba(89, 215, 30, 0.656);
+  color: #fff;
+  margin: 0 auto;
+}
