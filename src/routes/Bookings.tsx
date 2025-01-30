@@ -25,7 +25,6 @@ const Bookings = () => {
             ) : (
                 bookingsDetailed?.map((booking) => {
                     return <BookingCard booking={booking} key={booking.id} />
-
                 }))
             }
             {error && (
