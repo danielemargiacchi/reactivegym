@@ -1,6 +1,7 @@
+import { PropsBookingCard } from '../../types/PropsModal';
 import './BookingCard.css';
 
-const BookingCard = (booking: BookingWithEquipment) => {
+const BookingCard = ({booking}: PropsBookingCard) => {
     const startDateString: string = booking.start_date;  // booking start date
     const endDateString: string = booking.end_date;     // booking end date
     const startDateObject: Date = new Date(startDateString);    // start date object

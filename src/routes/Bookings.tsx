@@ -24,7 +24,7 @@ const Bookings = () => {
                 </div>
             ) : (
                 bookingsDetailed?.map((booking) => {
-                    return <BookingCard {...booking} key={booking.id} />
+                    return <BookingCard booking={booking} key={booking.id} />
 
                 }))
             }

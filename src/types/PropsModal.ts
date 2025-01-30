@@ -4,3 +4,7 @@ export type PropsModal = {
         equipmentName?: string;
         price?: number;
     }
+
+export type PropsBookingCard = {
+    booking: BookingWithEquipment
+}
