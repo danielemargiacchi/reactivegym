@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useBookApi from "./useBookApi";
 import { useNavigate } from "react-router";
+import AuthContext from "../context/AuthContext";
 
 const useModal = (time: number, equipmentId: number) => {
     const [modal, setModal] = useState(false);  // modal open true or false
     const { postDataFetch, message } = useBookApi();
     const [isBooked, setIsBooked] = useState(false);  // to disable/change the button
     const navigate = useNavigate();
+    const {isAuth, username} = useContext(AuthContext);
 
     const toggleModal = () => {
         setModal(!modal);
@@ -20,9 +22,11 @@ const useModal = (time: number, equipmentId: number) => {
             };
             postDataFetch(equipmentId, requestBody);
             setIsBooked(true);
-        } else {  
+        } else if (isAuth && isBooked) {  
             // already booked, button change to all bookings
-            navigate('/bookings');
+            navigate(`/account/${username}/bookings`);
+        }else{
+            navigate('/bookings')
         }
     };
 

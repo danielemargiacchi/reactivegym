@@ -1,12 +1,15 @@
 import { PropsModal } from '../../types/PropsModal';
 import './Modal.css';
 import useModal from '../../hooks/useModal';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 
 
 
 const Modal = ({ time, equipmentId, equipmentName, price }: PropsModal) => {
     const totalPrice = (price! * time).toFixed(2);  // total price
     const { toggleModal, handleBook, isBooked, message, modal, navigate } = useModal(time, equipmentId);
+    const {isAuth} = useContext(AuthContext);
 
     return <>
         <div className='actions-modal-btn' >
@@ -22,7 +25,7 @@ const Modal = ({ time, equipmentId, equipmentName, price }: PropsModal) => {
                         <p>Are you sure you want to book <strong>{equipmentName}</strong> for <span className='highlight'>{time} minutes</span>?</p>
                         <p>Total price: {totalPrice} €</p>
                         <div className="actions-btn">
-                            <button onClick={handleBook} className='confirm-btn'>{isBooked ? 'View all bookings' : 'Confirm'}</button>
+                            <button onClick={handleBook} className='confirm-btn'>{!isBooked ? 'Confirm' : (isAuth ? 'View my bookings' : 'View all bookings')}</button>
                             <button onClick={toggleModal} className='close-modal'>Back</button>
                         </div>
                         {message && (
