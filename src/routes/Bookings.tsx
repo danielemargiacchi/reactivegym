@@ -6,7 +6,7 @@ import useTabTitle from "../hooks/useTabTitle";
 
 const Bookings = () => {
     const navigate = useNavigate();
-    const { bookings, equipment, isLoading, error } = useBookingsApi(false);
+    const { bookingsDetailed, isLoading, error } = useBookingsApi(false);
 
     useTabTitle('Bookings | Gym');
     return <>
@@ -16,15 +16,15 @@ const Bookings = () => {
 
             {isLoading ? (
                 <div className="spinner"></div>
-            ) : bookings.length === 0 ? (
+            ) : bookingsDetailed?.length === 0 ? (
                 <div className="no-bookings-container">
                     <span className="info-message">There are no bookings active now</span>
                     <p>Are you trying to book an equipment?</p>
                     <button onClick={() => { navigate('/#equipment') }} >View equipments available</button>
                 </div>
             ) : (
-                bookings.map((booking) => {
-                    return <BookingCard equipment={equipment} booking={booking} key={booking.id} />
+                bookingsDetailed?.map((booking) => {
+                    return <BookingCard {...booking} key={booking.id} />
 
                 }))
             }

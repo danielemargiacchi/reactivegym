@@ -10,3 +10,6 @@ type BookingProp = {
     booking: EquipmentBooking;
 	equipment: Equipment[];
 }
+
+
+type BookingWithEquipment = EquipmentBooking & { equipment: Equipment | undefined };
